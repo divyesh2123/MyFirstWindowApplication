@@ -28,11 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtname = new System.Windows.Forms.TextBox();
             this.txtnumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.weltec_MorningDataSet = new MyFirstWindowApplication.Weltec_MorningDataSet();
+            this.roleMasterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.role_MasterTableAdapter = new MyFirstWindowApplication.Weltec_MorningDataSetTableAdapters.Role_MasterTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.weltec_MorningDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleMasterBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtname
@@ -77,11 +85,37 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // weltec_MorningDataSet
+            // 
+            this.weltec_MorningDataSet.DataSetName = "Weltec_MorningDataSet";
+            this.weltec_MorningDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // roleMasterBindingSource
+            // 
+            this.roleMasterBindingSource.DataMember = "Role_Master";
+            this.roleMasterBindingSource.DataSource = this.weltec_MorningDataSet;
+            // 
+            // role_MasterTableAdapter
+            // 
+            this.role_MasterTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(144, 266);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(535, 150);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -89,6 +123,10 @@
             this.Controls.Add(this.txtname);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.weltec_MorningDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleMasterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,6 +139,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private Weltec_MorningDataSet weltec_MorningDataSet;
+        private System.Windows.Forms.BindingSource roleMasterBindingSource;
+        private Weltec_MorningDataSetTableAdapters.Role_MasterTableAdapter role_MasterTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
